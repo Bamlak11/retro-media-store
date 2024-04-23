@@ -12,7 +12,7 @@ const Media = () => {
 
   return (
     <div className="flex justify-between flex-col p-10">
-      
+      {/* gets medialist component and mediaitems prop and displays the content  */}
       <MediaList mediaItems={mediaItems}/>
 
     </div>
