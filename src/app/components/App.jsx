@@ -12,14 +12,16 @@ const App = () => {
 
   const [cart, setCart] = useState([]);
 
+  const [message, setMessage] = useState('');
+
   const addToCart = (item) =>{
     setCart([...cart, item]);
-    console.log(`Added ${item.title} to the cart.`)
+    setMessage(`Added ${item.title} to the cart.`);
   }
 
   const removeFromCart = (item) => {
     setCart(cart.filter((cartItem) => cartItem.id !== item.id));
-    console.log(`Removed ${item.title} from the cart.`);
+    setMessage(`Removed ${item.title} to the cart.`);
   };
 
   const toggleFavorite = (itemId) => {
@@ -41,7 +43,7 @@ const App = () => {
       removeFromCart={removeFromCart}
       toggleFavorite={toggleFavorite}
       />
-
+    {message && <div>{message}</div>}
     </div>
   );
 };
